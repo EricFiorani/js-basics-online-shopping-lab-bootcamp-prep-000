@@ -20,12 +20,12 @@ function viewCart() {
   if (cart.length === 0) {
     console.log("Your shopping cart is empty.")
   } else {
-    var newCart = [];
+    var newArray = [];
     for (let i = 0; i < cart.length; i++) {
     var itemName = Object.keys(cart[i])
-    newCart.push(`${itemName} at $${cart[i][itemName]}`)
+    newArray.push(`${itemName} at $${cart[i][itemName]}`)
     }
-    console.log(`In your cart, you have ${newCart.join(", ")}.`)
+    console.log(`In your cart, you have ${newArray.join(", ")}.`)
   }
 }
 
