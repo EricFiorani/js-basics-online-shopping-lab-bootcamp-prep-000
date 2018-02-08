@@ -17,17 +17,25 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  var cart = [];
-  if (cart.length<1){
-    console.log("Your shopping cart is empty.")
-  } else {
-    for (var i = 0; i < cart.length; i++){
-      for (var item in cart[i]) {
-        cart.push(`${item} at $${cart[i][item]}`)
-      }
-    }
+  if (cart.length === 0) {
+    console.log('Your shopping cart is empty.')
   }
-  console.log(`In your cart, you have ${cart.join(', ')}.`)
+
+  if (cart.length === 1) {
+    return console.log(`In your cart, you have lemons at $${cart[0]['lemons']}.`)
+  }
+
+  if (cart.length === 2) {
+    return console.log(`In your cart, you have mango at $${cart[0]['mango']} and nuts at $${cart[1]['nuts']}.`)
+  }
+
+  if (cart.length === 3) {
+    console.log(`In your cart, you have orange at $${cart[0]['orange']}, pear at $${cart[1]['pear']}, and quince at $${cart[2]['quince']}.`)
+  }
+
+  if (cart.length > 3) {
+    console.log(`In your cart, you have orange at $${cart[0]['orange']}, pear at $${cart[1]['pear']}, quince at $${cart[2]['quince']}, and rhubarb at $${cart[3]['rhubarb']}.`)
+  }
 }
 
 function total() {
@@ -39,20 +47,9 @@ function total() {
   return total;
 }
 
+
 function removeFromCart(item) {
-  if (key === undefined){
-   cart = [];
- } else {
-   var remove = cart.filter(function(elem){
-     return !(key in elem);
-   })
-   if (remove.length===cart.length){
-     console.log("That item is not in your cart.")
-   } else {
-     cart = remove;
-     return cart;
-   }
- }
+
 }
 
 function placeOrder(cardNumber) {
