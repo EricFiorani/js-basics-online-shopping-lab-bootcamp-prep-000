@@ -18,18 +18,24 @@ function addToCart(item) {
 
 function viewCart() {
   if (cart.length === 0) {
-    console.log('Your shopping cart is empty.')
-  }
-
-  if (cart.length === 1) {
-    console.log(`In your cart, you have lemons at $${cart}.`)
+    console.log("Your shopping cart is empty.")
+  } else {
+    var newCart = [];
+    for (i = 0; i < cart.length; i++) {
+    var itemName = Object.keys(cart[i])
+    newCart.push(`${itemName} at $${cart[i][itemName]}`)
+    }
+    console.log(`In your cart, you have ${newArray.join(", ")}.`)
   }
 }
-''
-``
 
 function total() {
+  var total = cart.reduce( ((acc, itemObj) => {
+    var itemName = Object.keys(itemObj)[0];
+    return acc + itemObj[itemName]
+  }), 0);
 
+  return total;
 }
 
 function removeFromCart(item) {
