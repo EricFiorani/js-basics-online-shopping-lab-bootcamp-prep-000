@@ -40,7 +40,19 @@ function total() {
 }
 
 function removeFromCart(item) {
-
+  if (key === undefined){
+   cart = [];
+ } else {
+   var remove = cart.filter(function(elem){
+     return !(key in elem);
+   })
+   if (remove.length===cart.length){
+     console.log("That item is not in your cart.")
+   } else {
+     cart = remove;
+     return cart
+   }
+ }
 }
 
 function placeOrder(cardNumber) {
