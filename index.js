@@ -23,11 +23,11 @@ function viewCart() {
   } else {
     for (var i = 0; i < cart.length; i++){
       for (var item in cart[i]) {
-        cart.push(`${item} at $${cart[product][item]}`)
+        cart.push(`${item} at $${cart[i][item]}`)
       }
     }
   }
-  console.log(`In your cart, you have ${prodArr.join(', ')}.`)
+  console.log(`In your cart, you have ${cart.join(', ')}.`)
 }
 
 function total() {
