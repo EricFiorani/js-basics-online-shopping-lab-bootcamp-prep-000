@@ -53,7 +53,6 @@ function removeFromCart(item) {
     for(var c in cart[i]){
       if(cart[i].hasOwnProperty(c)){
         cart.splice(i, 1)
-        return cart
       }
     }
   }
