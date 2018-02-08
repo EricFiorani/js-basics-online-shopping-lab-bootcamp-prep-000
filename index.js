@@ -21,7 +21,7 @@ function viewCart() {
     console.log("Your shopping cart is empty.")
   } else {
     var newCart = [];
-    for (i = 0; i < cart.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
     var itemName = Object.keys(cart[i])
     newCart.push(`${itemName} at $${cart[i][itemName]}`)
     }
