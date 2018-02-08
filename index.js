@@ -67,5 +67,18 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
+  function cartTotal() {
+      var total = 0
+       for ( var i = 0; i < cart.length; i ++) {
+         total = total + cart[0][Object.keys(cart[0])[0]]
+         cart.shift()
+       }
+       return total
+    }
 
-}
+    if (creditCard) {
+      console.log(`Your total cost is $${cartTotal()}, which will be charged to the card ${creditCard}.`)
+    } else {
+      console.log("We don't have a credit card on file for you to place your order.")
+    }
+  }
