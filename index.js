@@ -25,7 +25,7 @@ function viewCart() {
     var itemName = Object.keys(cart[i])
     newCart.push(`${itemName} at $${cart[i][itemName]}`)
     }
-    console.log(`In your cart, you have ${newArray.join(", ")}.`)
+    console.log(`In your cart, you have ${newCart.join(", ")}.`)
   }
 }
 
