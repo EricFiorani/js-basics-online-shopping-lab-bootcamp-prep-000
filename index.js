@@ -21,8 +21,8 @@ function viewCart() {
   if (cart.length<1){
     console.log("Your shopping cart is empty.")
   } else {
-    for (var product=0; product<cart.length;product++){
-      for (var item in cart[product]) {
+    for (var i = 0; i < cart.length; i++){
+      for (var item in cart[i]) {
         prodArr.push(`${item} at $${cart[product][item]}`)
       }
     }
